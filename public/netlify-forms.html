@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <form name="request-ride" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="request-ride" />
+        <p style="display:none;">
+            <label>Don’t fill this out: <input name="bot-field" /></label>
+        </p>
+
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="tel" name="phone" />
+        <input type="text" name="serviceType" />
+        <input type="text" name="date" />
+        <input type="text" name="time" />
+        <input type="text" name="pickupLocation" />
+        <input type="text" name="dropoffLocation" />
+        <input type="text" name="passengers" />
+        <input type="text" name="referralCode" />
+        <textarea name="notes"></textarea>
+
+        <input type="text" name="requestId" />
+        <input type="text" name="submittedAt" />
+    </form>
+</body>
+
+</html>
