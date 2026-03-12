@@ -74,11 +74,16 @@ export function RequestForm() {
 
     try {
       // POST to Netlify (form capture)
-      await fetch("/", {
+      const res = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encodeForm(payload),
       })
+
+      if (!res.ok) {
+        const text = await res.text().catch(() => "")
+        throw new Error(`Netlify form POST failed: ${res.status} ${res.statusText} ${text}`)
+      }
 
       // keep your existing confirmation behavior
       sessionStorage.setItem(
