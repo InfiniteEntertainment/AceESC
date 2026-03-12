@@ -3,14 +3,24 @@ import { RequestForm } from "@/components/request-form"
 import { ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 
+
+
 export const metadata: Metadata = {
   title: "Request a Ride | Lux Black Transportation",
   description: "Request luxury chauffeur service in San Diego. Cadillac Escalade, professional chauffeurs, airport transfers, corporate transportation.",
 }
 
+export const dynamic = "force-static"
+
 export default function RequestPage() {
   return (
     <main className="min-h-screen bg-background py-12 md:py-20">
+      
+      <form name="request-ride" method="POST" data-netlify="true" hidden>
+        <input type="hidden" name="form-name" value="request-ride" />
+        <input name="bot-field" />
+      </form>
+
       <div className="max-w-2xl mx-auto px-4 sm:px-6">
         {/* Back Link */}
         <Link 

@@ -74,7 +74,7 @@ export function RequestForm() {
 
     try {
       // POST to Netlify (form capture)
-      await fetch("/netlify-forms.html", {
+      await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encodeForm(payload),
